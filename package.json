@@ -1,0 +1,27 @@
+{
+  "name": "nexrender-action-install-font-crossplatform",
+  "version": "1.0.0",
+  "description": "Installs fonts for nexrender jobs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/backbeatmedia/nexrender-action-install-font-crossplatform.git"
+  },
+  "keywords": [
+    "nexrender",
+    "install",
+    "font"
+  ],
+  "author": "Jeremy Smith",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/backbeatmedia/nexrender-action-install-font-crossplatform/issues"
+  },
+  "homepage": "https://github.com/backbeatmedia/nexrender-action-install-font-crossplatform#readme",
+  "dependencies": {
+    "installfont": "^0.0.12"
+  }
+}
