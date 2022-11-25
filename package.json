@@ -1,6 +1,6 @@
 {
   "name": "nexrender-action-install-font-crossplatform",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Installs fonts for nexrender jobs",
   "main": "index.js",
   "scripts": {
