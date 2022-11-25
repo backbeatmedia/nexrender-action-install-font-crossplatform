@@ -1,5 +1,4 @@
-const installfont = require('installfont')
-const path= require('path')
+const installfont = require('installfont');
 
 module.exports = async (
   job,
@@ -8,9 +7,14 @@ module.exports = async (
   type
 ) => {
 
-    await installfont(job.workpath, function(err) {
-        return reject(err)
-    });
+    if (type != 'prerender') {
+        throw new Error(`Font installer can be only run in prerender mode, you provided: ${type}.`)
+    }
 
+    console.log(`Installing fonts from ${job.workpath}`);
+
+    await installfont(job.workpath, function(err) {
+            if (err) throw err
+        })
 }
 
