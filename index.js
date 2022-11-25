@@ -10,8 +10,7 @@ module.exports = async (
     if (type != 'prerender') {
         throw new Error(`Font installer can be only run in prerender mode, you provided: ${type}.`)
     }
-
-    console.log(`Installing fonts from ${job.workpath}`);
+    settings.logger.log(`[${job.uid}] [action-install-font-crossplatform] Installing fonts from ${job.workpath}`)
 
     await installfont(job.workpath, function(err) {
             if (err) throw err
