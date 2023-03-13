@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/backbeatmedia/nexrender-action-install-font-crossplatform#readme",
   "dependencies": {
-    "installfont": "github:backbeatmedia/installfont"
+    "installfont": "installfont"
   }
 }
