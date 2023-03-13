@@ -13,7 +13,7 @@ module.exports = async (
     settings.logger.log(`[${job.uid}] [action-install-font-crossplatform] Installing fonts from ${job.workpath}`)
 
     var options = {
-      installForWindowsUser: true
+      installForWindowsUser: false
     }
 
     await installfont(job.workpath, function(err) {
