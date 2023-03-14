@@ -18,6 +18,6 @@ module.exports = async (
 
     await installfont(job.workpath, function(err) {
             if (err) throw err
-        }, {})
+        }, {options})
 }
 
