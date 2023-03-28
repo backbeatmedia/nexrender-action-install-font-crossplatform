@@ -1,3 +1,8 @@
+param (
+    # source folder for fonts
+    [string]$fontFolder
+)
+
 function Install-Font {  
     param  
     (  
@@ -37,14 +42,8 @@ function Install-Font {
         
      } 
            
-    $currentDirectory = [System.AppDomain]::CurrentDomain.BaseDirectory.TrimEnd('\') 
-    if ($currentDirectory -eq $PSHOME.TrimEnd('\')) 
-    {     
-        $currentDirectory = $PSScriptRoot 
-    }
-    
     #Loop through fonts in the same directory as the script and install/uninstall them
-    foreach ($FontItem in (Get-ChildItem -Path $currentDirectory | 
+    foreach ($FontItem in (Get-ChildItem -Path $fontFolder | 
     Where-Object {($_.Name -like '*.ttf') -or ($_.Name -like '*.otf') })) {  
         Install-Font -fontFile $FontItem.FullName  
     } 
