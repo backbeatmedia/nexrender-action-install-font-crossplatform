@@ -42,7 +42,7 @@ function Install-Font {
         
      } 
            
-     Add-Type -Path C:\Windows\Microsoft.NET\assembly\GAC_64\PresentationCore\v4.0_4.0.0.0__31bf3856ad364e35\PresentationCore.dll
+    Add-Type -Path C:\Windows\Microsoft.NET\assembly\GAC_64\PresentationCore\v4.0_4.0.0.0__31bf3856ad364e35\PresentationCore.dll
 
     #Loop through fonts in the same directory as the script and install/uninstall them
     foreach ($FontItem in (Get-ChildItem -Path $fontFolder | 
