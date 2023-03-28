@@ -12,7 +12,7 @@ function Install-Font {
         try { 
     
             #get font name
-            $gt = [System.Windows.Media.GlyphTypeface]::new($fontFile.FullName)
+            $gt = [Windows.Media.GlyphTypeface]::new($fontFile.FullName)
             $family = $gt.Win32FamilyNames['en-us']
             if ($null -eq $family) { $family = $gt.Win32FamilyNames.Values.Item(0) }
             $face = $gt.Win32FaceNames['en-us']
@@ -42,6 +42,8 @@ function Install-Font {
         
      } 
            
+     Add-Type -Path C:\Windows\Microsoft.NET\assembly\GAC_64\PresentationCore\v4.0_4.0.0.0__31bf3856ad364e35\PresentationCore.dll
+
     #Loop through fonts in the same directory as the script and install/uninstall them
     foreach ($FontItem in (Get-ChildItem -Path $fontFolder | 
     Where-Object {($_.Name -like '*.ttf') -or ($_.Name -like '*.otf') })) {  
