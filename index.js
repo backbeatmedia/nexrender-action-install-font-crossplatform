@@ -1,5 +1,5 @@
 const path = require('path');
-const { spawn } = require("child_process");
+const spawn = require("child_process").spawn;
 
 module.exports = async (
   job,
@@ -16,7 +16,8 @@ module.exports = async (
 
     var localScript = path.join(__dirname, '/install.ps1');
 
-    spawn("powershell.exe",[localScript, job.workpath]);
+    settings.logger.log(`[${job.uid}] [action-install-font-crossplatform] Running script: ${localScript}`)
+    spawn("powershell.exe",[localScript, job.workpath], { stdio: 'inherit' });
 
 }
 

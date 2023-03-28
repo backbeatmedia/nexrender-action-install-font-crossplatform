@@ -3,11 +3,7 @@ const {resolve} = require('path')
 const installer = require('../index.js')
 
 const settings = {
-    logger: { // a substitute logger that suppresses all
-        log: ()=>{},
-        info: ()=>{},
-        error: ()=>{},
-    }
+    logger: console
 }
 
 jest.setTimeout(10000);
@@ -17,7 +13,8 @@ describe("nexrender-action-install-font-crossplatform", ()=>{
     test("installs fonts", async ()=>{
         
         let job = {
-            workpath: resolve('./test/fonts')
+            workpath: resolve('./test/fonts'),
+            uid: 'testing'
         }
 
         let result

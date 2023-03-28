@@ -8,11 +8,11 @@ function Install-Font {
     (  
         [System.IO.FileInfo]$fontFile  
     )  
-          
+
         try { 
     
             #get font name
-            $gt = [Windows.Media.GlyphTypeface]::new($fontFile.FullName)
+            $gt = [System.Windows.Media.GlyphTypeface]::new($fontFile.FullName)
             $family = $gt.Win32FamilyNames['en-us']
             if ($null -eq $family) { $family = $gt.Win32FamilyNames.Values.Item(0) }
             $face = $gt.Win32FaceNames['en-us']
