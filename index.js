@@ -17,7 +17,7 @@ module.exports = async (
     var localScript = path.join(__dirname, '/install.ps1');
 
     settings.logger.log(`[${job.uid}] [action-install-font-crossplatform] Running script: ${localScript}`)
-    spawn("powershell.exe",[localScript, job.workpath], { stdio: 'inherit' });
+    await spawn("powershell.exe",[localScript, job.workpath], { stdio: 'inherit' });
 
 }
 
